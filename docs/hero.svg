@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#f59e0b"/>
+    </marker>
+    <style>
+      text { font-family: "DejaVu Sans", "Helvetica Neue", Arial, sans-serif; }
+      .t { fill: #e2e8f0; font-size: 21px; }
+      .s { fill: #94a3b8; font-size: 15px; }
+      .m { fill: #f59e0b; font-size: 15px; font-family: "DejaVu Sans Mono", monospace; }
+      .box { fill: #111a33; stroke: #f59e0b; stroke-width: 2; }
+      .card { fill: #0f172a; stroke: #334155; stroke-width: 2; }
+      .e { stroke: #f59e0b; stroke-width: 2.5; fill: none; marker-end: url(#a); }
+      .ed { stroke: #f59e0b; stroke-width: 2; fill: none; stroke-dasharray: 7 6; marker-end: url(#a); }
+    </style>
+  </defs>
+  <rect width="1280" height="640" fill="#0b1020"/>
+
+  <text x="80" y="100" fill="#f8fafc" font-size="54" font-weight="700">crewai-hierarchical-planning</text>
+  <text x="80" y="146" fill="#94a3b8" font-size="24">A manager plans and delegates; specialists do the work; a critic and a guardrail sign off.</text>
+
+  <!-- planner -->
+  <rect x="80" y="214" width="250" height="44" rx="22" fill="#0b1020" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5 4"/>
+  <text class="m" x="205" y="242" text-anchor="middle">planning=True: planner</text>
+  <path class="ed" d="M330 236 L 478 236"/>
+  <text class="s" x="404" y="224" text-anchor="middle">plan per task</text>
+
+  <!-- manager -->
+  <rect class="box" x="480" y="196" width="320" height="84" rx="14"/>
+  <text class="t" x="640" y="232" text-anchor="middle">Launch Manager</text>
+  <text class="s" x="640" y="258" text-anchor="middle">Process.hierarchical · delegates, judges</text>
+
+  <!-- delegation edges -->
+  <path class="e" d="M560 280 C 560 320, 205 310, 205 348"/>
+  <path class="e" d="M610 280 C 610 320, 495 320, 495 348"/>
+  <path class="e" d="M670 280 C 670 320, 785 320, 785 348"/>
+  <path class="e" d="M720 280 C 720 320, 1075 310, 1075 348"/>
+  <text class="m" x="822" y="232">delegate_work_to_coworker</text>
+  <text class="s" x="822" y="256">ask_question_to_coworker</text>
+
+  <!-- specialists -->
+  <rect class="card" x="80" y="350" width="250" height="96" rx="14"/>
+  <text class="t" x="205" y="386" text-anchor="middle">Market Researcher</text>
+  <text class="m" x="205" y="416" text-anchor="middle">market_data (sandboxed)</text>
+
+  <rect class="card" x="370" y="350" width="250" height="96" rx="14"/>
+  <text class="t" x="495" y="386" text-anchor="middle">Pricing Analyst</text>
+  <text class="m" x="495" y="416" text-anchor="middle">calculator (AST, no eval)</text>
+
+  <rect class="card" x="660" y="350" width="250" height="96" rx="14"/>
+  <text class="t" x="785" y="386" text-anchor="middle">Copywriter</text>
+  <text class="s" x="785" y="416" text-anchor="middle">tagline · positioning</text>
+
+  <rect class="card" x="950" y="350" width="250" height="96" rx="14"/>
+  <text class="t" x="1075" y="386" text-anchor="middle">QA Reviewer</text>
+  <text class="s" x="1075" y="416" text-anchor="middle">the critic</text>
+
+  <!-- output -->
+  <path class="e" d="M1075 446 L 1075 488"/>
+  <rect class="box" x="890" y="490" width="310" height="60" rx="14"/>
+  <text class="m" x="1045" y="526" text-anchor="middle">guardrail → LaunchBrief</text>
+
+  <!-- flow strip -->
+  <text class="s" x="80" y="512">CrewAI Flow</text>
+  <text class="m" x="80" y="540">@router: crew | one agent  →  @human_feedback  →  guardrail</text>
+  <text class="s" x="80" y="596">telemetry off · runs 100% locally on ollama · fake-LLM tests with sockets blocked</text>
+</svg>

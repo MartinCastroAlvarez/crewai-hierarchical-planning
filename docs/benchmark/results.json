@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "date": "2026-10-25",
+    "python": "3.12.3",
+    "crewai": "1.15.30",
+    "latency_per_call_s": 0.25,
+    "repeats": 3,
+    "statistic": "median wall clock"
+  },
+  "rows": [
+    {
+      "case": "crew: sequential",
+      "route": "-",
+      "tasks_completed": 4,
+      "delegations": 0,
+      "llm_calls": 9,
+      "planner_calls": 0,
+      "tool_calls": 5,
+      "guardrail_failures": 0,
+      "seconds": 2.377,
+      "valid": true
+    },
+    {
+      "case": "crew: hierarchical",
+      "route": "-",
+      "tasks_completed": 4,
+      "delegations": 4,
+      "llm_calls": 17,
+      "planner_calls": 0,
+      "tool_calls": 5,
+      "guardrail_failures": 0,
+      "seconds": 4.415,
+      "valid": true
+    },
+    {
+      "case": "crew: hierarchical + planning",
+      "route": "-",
+      "tasks_completed": 4,
+      "delegations": 4,
+      "llm_calls": 18,
+      "planner_calls": 1,
+      "tool_calls": 5,
+      "guardrail_failures": 0,
+      "seconds": 4.654,
+      "valid": true
+    },
+    {
+      "case": "crew: hierarchical + planning (manager_llm)",
+      "route": "-",
+      "tasks_completed": 4,
+      "delegations": 4,
+      "llm_calls": 18,
+      "planner_calls": 1,
+      "tool_calls": 5,
+      "guardrail_failures": 0,
+      "seconds": 4.637,
+      "valid": true
+    },
+    {
+      "case": "flow: complex request (routed to crew)",
+      "route": "crew",
+      "tasks_completed": 4,
+      "delegations": 4,
+      "llm_calls": 18,
+      "planner_calls": 1,
+      "tool_calls": 5,
+      "guardrail_failures": 0,
+      "seconds": 4.691,
+      "valid": true
+    },
+    {
+      "case": "flow: simple request (routed to one agent)",
+      "route": "simple",
+      "tasks_completed": 1,
+      "delegations": 0,
+      "llm_calls": 3,
+      "planner_calls": 0,
+      "tool_calls": 2,
+      "guardrail_failures": 0,
+      "seconds": 0.78,
+      "valid": true
+    }
+  ]
+}

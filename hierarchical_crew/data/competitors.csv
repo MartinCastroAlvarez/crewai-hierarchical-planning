@@ -1,0 +1,10 @@
+category,competitor,product,price_usd,rating,notes
+air-quality monitor,Breezely,Breezely Mini,79.00,3.9,PM2.5 only; app required
+air-quality monitor,Wrenly,Wrenly Air 2,139.00,4.4,CO2 + PM2.5; mains powered
+air-quality monitor,Cirrolabs,Cirro One,129.00,4.1,CO2 + VOC; subscription for history
+air-quality monitor,Hearthwise,Hearthwise Sense,199.00,4.6,full sensor suite; radon add-on
+air-quality monitor,Quillon,Quillon Pro,249.00,4.2,full sensor suite; smart-home hub
+smart water bottle,Gulpi,Gulpi Go,39.00,4.0,sip tracking; no glow reminder
+smart water bottle,Aquelle,Aquelle Smart,59.00,4.3,glow reminder; app sync
+desk lamp,Lanternry,Lanternry Classic,49.00,4.1,warm/cool switch only
+desk lamp,Duskfield,Duskfield Pro,89.00,4.5,circadian schedule; app
